@@ -1,6 +1,7 @@
 import 'package:aplicativodedoacoes/components/custom_text_form_field.dart';
 import 'package:aplicativodedoacoes/constants/colors.dart';
 import 'package:aplicativodedoacoes/constants/values.dart';
+import 'package:aplicativodedoacoes/pages/user/new_account_page.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -56,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
               CustomTextFormField(
                 controller: _passwordController,
                 label: "Senha",
+                obscureText: true,
                 prefixIcon: const Icon(
                   IconlyLight.password,
                   size: 18,
@@ -90,12 +92,19 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const NewAccountPage(),
+                        ),
+                      );
+                    },
                     style: TextButton.styleFrom(
                       padding: const EdgeInsets.all(5),
                     ),
                     child: const Text(
-                      "Crie uma Agora!",
+                      "Crie uma agora!",
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
