@@ -25,6 +25,10 @@ abstract class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: kColorGray, // Cor de fundo
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 5,
+          horizontal: 10,
+        ),
         hintStyle: const TextStyle(
           fontSize: 14,
           fontFamily: 'Urbanist',

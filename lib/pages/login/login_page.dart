@@ -1,6 +1,7 @@
 import 'package:aplicativodedoacoes/components/custom_text_form_field.dart';
 import 'package:aplicativodedoacoes/constants/colors.dart';
 import 'package:aplicativodedoacoes/constants/values.dart';
+import 'package:aplicativodedoacoes/pages/home/home_page.dart';
 import 'package:aplicativodedoacoes/pages/user/new_account_page.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -67,7 +68,14 @@ class _LoginPageState extends State<LoginPage> {
                 height: kValueDefaultPadding,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomePage(),
+                    ),
+                  );
+                },
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
