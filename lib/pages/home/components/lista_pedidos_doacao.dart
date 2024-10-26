@@ -50,6 +50,5 @@ class ListaPedidosDoacao extends StatelessWidget {
         ),
       ],
     );
-    ;
   }
 }

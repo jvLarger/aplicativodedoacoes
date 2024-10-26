@@ -1,6 +1,7 @@
 import 'package:aplicativodedoacoes/components/custom_text_form_field.dart';
 import 'package:aplicativodedoacoes/constants/colors.dart';
 import 'package:aplicativodedoacoes/constants/values.dart';
+import 'package:aplicativodedoacoes/pages/chat/salas_bate_papo_page.dart';
 import 'package:aplicativodedoacoes/pages/home/components/header_home.dart';
 import 'package:aplicativodedoacoes/pages/home/components/lista_pedidos_doacao.dart';
 import 'package:aplicativodedoacoes/pages/home/components/lista_pedidos_doacao_destaque.dart';
@@ -49,7 +50,12 @@ class _HomePageState extends State<HomePage> {
                   IconlyLight.chat,
                 ),
                 onPressed: () {
-                  // Ação do botão de menu
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SalasBatePapoPage(),
+                    ),
+                  );
                 },
               ),
               IconButton(
