@@ -4,6 +4,7 @@ import 'package:aplicativodedoacoes/constants/values.dart';
 import 'package:aplicativodedoacoes/pages/home/components/header_home.dart';
 import 'package:aplicativodedoacoes/pages/home/components/lista_pedidos_doacao.dart';
 import 'package:aplicativodedoacoes/pages/home/components/lista_pedidos_doacao_destaque.dart';
+import 'package:aplicativodedoacoes/pages/pedido/pedido_cadastro_page.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -73,7 +74,12 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Ação do FAB
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const PedidoCadastroPage(),
+            ),
+          );
         },
         child: Icon(Icons.add),
       ),
