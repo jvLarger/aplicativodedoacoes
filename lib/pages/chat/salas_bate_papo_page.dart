@@ -2,6 +2,7 @@ import 'package:aplicativodedoacoes/constants/colors.dart';
 import 'package:aplicativodedoacoes/constants/values.dart';
 import 'package:aplicativodedoacoes/pages/chat/components/lista_salas_bate_papo.dart';
 import 'package:aplicativodedoacoes/pages/home/home_page.dart';
+import 'package:aplicativodedoacoes/pages/perfil/perfil_page.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -53,11 +54,16 @@ class _SalasBatePapoPageState extends State<SalasBatePapoPage> {
                 onPressed: () {},
               ),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   IconlyLight.profile,
                 ),
                 onPressed: () {
-                  // Ação do botão de menu
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PerfilPage(),
+                    ),
+                  );
                 },
               ),
               IconButton(
