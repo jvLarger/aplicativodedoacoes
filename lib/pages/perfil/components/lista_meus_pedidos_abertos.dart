@@ -12,7 +12,7 @@ class ListaMeusPedidosAbertos extends StatelessWidget {
       scrollDirection: Axis.vertical,
       itemCount: 10,
       itemBuilder: (context, index) {
-        return CardMeuPedidoAberto();
+        return const CardMeuPedidoAberto();
       },
     );
   }

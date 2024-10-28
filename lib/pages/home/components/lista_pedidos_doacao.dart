@@ -35,12 +35,12 @@ class ListaPedidosDoacao extends StatelessWidget {
               return index % 2 == 0
                   ? Row(
                       children: [
-                        CardPedidoDoacao(),
+                        const CardPedidoDoacao(),
                         const SizedBox(
                           width: 15,
                         ),
                         (index + 1 <= 10 - 1
-                            ? CardPedidoDoacao()
+                            ? const CardPedidoDoacao()
                             : const SizedBox()),
                       ],
                     )

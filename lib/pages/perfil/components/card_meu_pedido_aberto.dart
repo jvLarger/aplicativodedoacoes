@@ -78,12 +78,12 @@ class CardMeuPedidoAberto extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                             vertical: 3,
                             horizontal: 3,
                           ),
                         ),
-                        child: Text(
+                        child: const Text(
                           "JÁ CONSEGUI",
                           style: TextStyle(
                             fontSize: 11,
@@ -92,22 +92,22 @@ class CardMeuPedidoAberto extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: kValueDefaultPadding / 2,
                     ),
                     Expanded(
                       child: OutlinedButton(
                         style: OutlinedButton.styleFrom(
-                          side: BorderSide(
+                          side: const BorderSide(
                             color: kColorApp,
                           ),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                             vertical: 3,
                             horizontal: 3,
                           ),
                         ),
                         onPressed: () {},
-                        child: Text(
+                        child: const Text(
                           "ALTERAR",
                           style: TextStyle(
                             fontSize: 11,

@@ -17,29 +17,29 @@ class ListaSalasBatePapo extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ChatPage(),
+                builder: (context) => const ChatPage(),
               ),
             );
           },
-          leading: CircleAvatar(
+          leading: const CircleAvatar(
             backgroundImage: NetworkImage(
               "https://www.al.ce.gov.br//storage/deputado/57/foto/dl9oNUbDldKgAuBHrB1bVtP2g7LbRuaqMYSeH8f8.jpg",
             ),
           ),
-          title: Text(
+          title: const Text(
             "Maria Silva",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 13,
             ),
           ),
-          subtitle: Text(
+          subtitle: const Text(
             "1 mensagem não lida.",
             style: TextStyle(
               fontSize: 11,
             ),
           ),
-          trailing: Icon(Icons.chevron_right),
+          trailing: const Icon(Icons.chevron_right),
         );
       },
     );

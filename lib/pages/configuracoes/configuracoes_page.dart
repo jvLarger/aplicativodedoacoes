@@ -1,33 +1,20 @@
 import 'package:aplicativodedoacoes/constants/colors.dart';
 import 'package:aplicativodedoacoes/constants/values.dart';
 import 'package:aplicativodedoacoes/pages/chat/salas_bate_papo_page.dart';
-import 'package:aplicativodedoacoes/pages/configuracoes/configuracoes_page.dart';
 import 'package:aplicativodedoacoes/pages/home/home_page.dart';
-import 'package:aplicativodedoacoes/pages/perfil/components/lista_meus_pedidos_abertos.dart';
+import 'package:aplicativodedoacoes/pages/perfil/perfil_page.dart';
+import 'package:aplicativodedoacoes/pages/user/alterar_usuario_page.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
-class PerfilPage extends StatefulWidget {
-  const PerfilPage({super.key});
+class ConfiguracoesPage extends StatefulWidget {
+  const ConfiguracoesPage({super.key});
 
   @override
-  State<PerfilPage> createState() => _PerfilPageState();
+  State<ConfiguracoesPage> createState() => _ConfiguracoesPageState();
 }
 
-class _PerfilPageState extends State<PerfilPage> with TickerProviderStateMixin {
-  TabController? _tabController;
-  int _indexTabAtiva = 0;
-
-  @override
-  void initState() {
-    _tabController = TabController(
-      length: 2,
-      vsync: this,
-      initialIndex: 0,
-    );
-    super.initState();
-  }
-
+class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,24 +62,24 @@ class _PerfilPageState extends State<PerfilPage> with TickerProviderStateMixin {
               ),
               IconButton(
                 icon: const Icon(
-                  IconlyBold.profile,
-                  color: kColorApp,
-                ),
-                onPressed: () {
-                  // Ação do botão de menu
-                },
-              ),
-              IconButton(
-                icon: const Icon(
-                  IconlyLight.setting,
+                  IconlyLight.profile,
                 ),
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ConfiguracoesPage(),
+                      builder: (context) => const PerfilPage(),
                     ),
                   );
+                },
+              ),
+              IconButton(
+                icon: const Icon(
+                  IconlyBold.setting,
+                  color: kColorApp,
+                ),
+                onPressed: () {
+                  // Ação do botão de menu
                 },
               ),
             ],
@@ -110,7 +97,7 @@ class _PerfilPageState extends State<PerfilPage> with TickerProviderStateMixin {
                 right: kValueDefaultPadding,
               ),
               child: Text(
-                "Perfil",
+                "Configurações",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
@@ -151,37 +138,38 @@ class _PerfilPageState extends State<PerfilPage> with TickerProviderStateMixin {
                 ],
               ),
             ),
-            Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: kValueDefaultPadding),
-              child: Column(
-                children: [
-                  TabBar(
-                    unselectedLabelColor: Colors.black,
-                    labelColor: kColorApp,
-                    labelStyle: const TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Urbanist',
-                    ),
-                    onTap: (value) {
-                      _indexTabAtiva = value;
-                      setState(() {});
-                    },
-                    tabs: const [
-                      Tab(
-                        text: 'Abertos',
-                      ),
-                      Tab(
-                        text: 'Concluídos',
-                      )
-                    ],
-                    controller: _tabController,
-                    indicatorSize: TabBarIndicatorSize.tab,
+            const SizedBox(
+              height: kValueDefaultPadding * 2,
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AlterarUsuarioPage(),
                   ),
-                  _indexTabAtiva == 0
-                      ? const ListaMeusPedidosAbertos()
-                      : const ListaMeusPedidosAbertos()
-                ],
+                );
+              },
+              title: const Text(
+                "Alterar Informações",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              leading: const Icon(IconlyLight.profile),
+              trailing: const Icon(Icons.chevron_right),
+            ),
+            const ListTile(
+              title: Text(
+                "Sair",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.red,
+                ),
+              ),
+              leading: Icon(
+                IconlyLight.logout,
+                color: Colors.red,
               ),
             )
           ],

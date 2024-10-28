@@ -1,6 +1,7 @@
 import 'package:aplicativodedoacoes/constants/colors.dart';
 import 'package:aplicativodedoacoes/constants/values.dart';
 import 'package:aplicativodedoacoes/pages/chat/components/lista_salas_bate_papo.dart';
+import 'package:aplicativodedoacoes/pages/configuracoes/configuracoes_page.dart';
 import 'package:aplicativodedoacoes/pages/home/home_page.dart';
 import 'package:aplicativodedoacoes/pages/perfil/perfil_page.dart';
 import 'package:flutter/material.dart';
@@ -18,16 +19,16 @@ class _SalasBatePapoPageState extends State<SalasBatePapoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           border: Border(
             top: BorderSide(
-              color: const Color.fromARGB(255, 229, 229, 229), // Cor da borda
+              color: Color.fromARGB(255, 229, 229, 229), // Cor da borda
               width: 0.5, // Espessura da borda
             ),
           ),
         ),
         child: BottomAppBar(
-          shape: CircularNotchedRectangle(), // Cria o recorte para o FAB
+          shape: const CircularNotchedRectangle(), // Cria o recorte para o FAB
           notchMargin: 8.0,
           child: Row(
             mainAxisSize: MainAxisSize.max,
@@ -47,7 +48,7 @@ class _SalasBatePapoPageState extends State<SalasBatePapoPage> {
                 },
               ),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   IconlyBold.chat,
                   color: kColorApp,
                 ),
@@ -67,11 +68,16 @@ class _SalasBatePapoPageState extends State<SalasBatePapoPage> {
                 },
               ),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   IconlyLight.setting,
                 ),
                 onPressed: () {
-                  // Ação do botão de menu
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ConfiguracoesPage(),
+                    ),
+                  );
                 },
               ),
             ],

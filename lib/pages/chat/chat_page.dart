@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
 class ChatPage extends StatefulWidget {
+  const ChatPage({super.key});
+
   @override
-  _ChatPageState createState() => _ChatPageState();
+  State<ChatPage> createState() => _ChatPageState();
 }
 
 class _ChatPageState extends State<ChatPage> {
@@ -30,7 +32,7 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Maria Silva'),
+        title: const Text('Maria Silva'),
       ),
       body: Column(
         children: [
@@ -56,7 +58,7 @@ class _ChatPageState extends State<ChatPage> {
                     controller: _controller,
                     label: 'Digite uma mensagem...',
                     suffixIcon: IconButton(
-                      icon: Icon(IconlyLight.send),
+                      icon: const Icon(IconlyLight.send),
                       onPressed: _sendMessage,
                       color: Theme.of(context).primaryColor,
                     ),

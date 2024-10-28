@@ -5,6 +5,7 @@ class MessageBubble extends StatelessWidget {
   final bool isMe;
 
   const MessageBubble({
+    super.key,
     required this.message,
     required this.isMe,
   });
@@ -19,10 +20,10 @@ class MessageBubble extends StatelessWidget {
         decoration: BoxDecoration(
           color: isMe ? Colors.green[300] : Colors.grey[300],
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(12),
-            topRight: Radius.circular(12),
-            bottomLeft: isMe ? Radius.circular(12) : Radius.zero,
-            bottomRight: isMe ? Radius.zero : Radius.circular(12),
+            topLeft: const Radius.circular(12),
+            topRight: const Radius.circular(12),
+            bottomLeft: isMe ? const Radius.circular(12) : Radius.zero,
+            bottomRight: isMe ? Radius.zero : const Radius.circular(12),
           ),
         ),
         child: Text(

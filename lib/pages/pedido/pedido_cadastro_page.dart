@@ -94,7 +94,7 @@ class _PedidoCadastroPageState extends State<PedidoCadastroPage> {
                     children: [
                       Expanded(
                         flex: 7,
-                        child: const CustomTextFormField(
+                        child: CustomTextFormField(
                           label: "Cidade",
                         ),
                       ),
@@ -103,7 +103,7 @@ class _PedidoCadastroPageState extends State<PedidoCadastroPage> {
                       ),
                       Expanded(
                         flex: 3,
-                        child: const CustomTextFormField(
+                        child: CustomTextFormField(
                           label: "UF",
                         ),
                       ),
@@ -114,7 +114,7 @@ class _PedidoCadastroPageState extends State<PedidoCadastroPage> {
                   ),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(

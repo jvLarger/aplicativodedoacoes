@@ -2,6 +2,7 @@ import 'package:aplicativodedoacoes/components/custom_text_form_field.dart';
 import 'package:aplicativodedoacoes/constants/colors.dart';
 import 'package:aplicativodedoacoes/constants/values.dart';
 import 'package:aplicativodedoacoes/pages/chat/salas_bate_papo_page.dart';
+import 'package:aplicativodedoacoes/pages/configuracoes/configuracoes_page.dart';
 import 'package:aplicativodedoacoes/pages/home/components/header_home.dart';
 import 'package:aplicativodedoacoes/pages/home/components/lista_pedidos_doacao.dart';
 import 'package:aplicativodedoacoes/pages/home/components/lista_pedidos_doacao_destaque.dart';
@@ -22,23 +23,23 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           border: Border(
             top: BorderSide(
-              color: const Color.fromARGB(255, 229, 229, 229), // Cor da borda
+              color: Color.fromARGB(255, 229, 229, 229), // Cor da borda
               width: 0.5, // Espessura da borda
             ),
           ),
         ),
         child: BottomAppBar(
-          shape: CircularNotchedRectangle(), // Cria o recorte para o FAB
+          shape: const CircularNotchedRectangle(), // Cria o recorte para o FAB
           notchMargin: 8.0,
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   IconlyBold.home,
                   color: kColorApp,
                 ),
@@ -47,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   IconlyLight.chat,
                 ),
                 onPressed: () {
@@ -60,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   IconlyLight.profile,
                 ),
                 onPressed: () {
@@ -73,11 +74,16 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   IconlyLight.setting,
                 ),
                 onPressed: () {
-                  // Ação do botão de menu
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ConfiguracoesPage(),
+                    ),
+                  );
                 },
               ),
             ],
@@ -93,7 +99,7 @@ class _HomePageState extends State<HomePage> {
             ),
           );
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation
           .centerDocked, // Posiciona o FAB centralizado
